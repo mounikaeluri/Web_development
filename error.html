@@ -1,0 +1,34 @@
+<!--    Eluri,Mounika   Account:  jadrn034
+        CS645, Spring 2016
+        Project #1
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Login Page
+    </title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/jquery/jQueryUI.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+ <h2>Login Example</h2>
+    <div id="container">
+        <form id="loginform" name="loginform" method="post" action="/perl/jadrn034/proj1/login.cgi">
+            <label> Username:</label> <br /><input type="text" name="username" required=required autofocus /> <br /><br /><br />
+            <label> Password:</label> <br /> <input type="password" name="password" required=required /><br /><br /><br />
+
+            <input type="button" id="resetButton" value="Clear" />
+            <input type="submit"  value="Login" />
+
+            <p id="invalidlogin"> Invalid Username or Password </p>
+
+        </form>
+
+
+    </div>
+</body>
+
+</html>

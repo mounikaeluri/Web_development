@@ -1,0 +1,85 @@
+﻿<!--    Eluri,Mounika   Account:  jadrn034
+        CS645, Spring 2016
+        Project #1
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Online Store</title>
+    <link type="text/css" rel="stylesheet" href="home.css" />
+    <script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/jquery/jQueryUI.js"></script>
+    <script type="text/javascript" src="home.js"></script>
+</head>
+<body>
+    <h2>Online Catalog</h2>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1"><span id="span1">New Record</span></a></li>
+            <li><a href="#tabs-2"><span id="span2">Edit Record</span></a></li>
+            <li><a href="#tabs-3"><span id="span3">Delete Record</span></a></li>
+        </ul>
+        <div id="logout">
+            <a href="/perl/jadrn034/proj1/logout.cgi">Logout</a></>
+        </div>
+        <div id="tabs-1">
+            <br /><br /><br /><br />
+            <form id="newproductform" name="newproductform" method="post" enctype="multipart/form-data" action="/perl/jadrn034/proj1/newproduct.cgi">
+                <label> SKU:</label> <input type="text" id="sku" name="sku" placeholder="SKU" autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus required=required /> <p id="skustatus">SKU already exists</p> <br /><br />
+                <label> Vendor: </label> <select name="vendor" id="vendor" required=required></select><br /><br />
+                <label> Category:</label> <select type="text" name="category" id="category" required=required></select> <br /><br />
+                <label> Manufacturer's ID: </label> <input type="text" name="manufactureid" id="manufactureid" placeholder="Manufacturer's ID" required=required /><br /> <br />
+                <label> Description:</label> <textarea name="description" id="description" placeholder="Product Description" required=required> </textarea> <br /> <br />
+                <label> Product Features:</label> <textarea name="productfeatures" placeholder="Product Features" id="productfeatures" required=required> </textarea> <br /> <br />
+                <label> Cost:</label> <input type="text" name="cost" id="cost" placeholder="Cost (ex: 250)" required=required /><br /> <br />
+                <label> Retail:</label> <input type="text" name="retail" id="retail" placeholder="Retail (ex: $399.99)" required=required /><br /> <br /><br /><br />
+                <label> Product Image:</label> <input type="file" id="productimage" name="productimage" required=required accept="image/*" /> <br /><br />
+                <input type="button" id="clearbutton" value="Reset" />
+                <input type="submit" id="submitbutton" value="Submit" />
+            </form>
+        </div>
+
+        <div id="tabs-2">
+            <br />
+            <div id="searchSpan">
+                <input type="search" name="search" id="search" placeholder="Search by SKU" autofocus required=required /> <input type="button" name="searchButton" id="searchButton" value="Search" />
+                <p id="noSearchResults">No Search Results</p>
+            </div>
+            <table name="searchResults" id="searchResults">
+                <tbody name="searchResultsBody" id="searchResultsBody"></tbody>
+            </table>
+            <br /><br />
+            <form id="editproductform" name="editproductform" method="post" enctype="multipart/form-data" action="/perl/jadrn034/proj1/updateproduct.cgi">
+                <label> SKU:</label> <input type="text" id="editsku" name="sku" autofocus placeholder="SKU" required=required /><input type="checkbox" name="isEditSKU" id="isEditSKU" value="isEditSKU" />EDIT SKU <p id="editskustatus">SKU already exists</p> <br /><br />
+                <label>Vendor: </label> <select name="vendor" id="editvendor" required=required></select><br /><br />
+                <label> Category:</label> <select type="text" name="category" id="editcategory" required=required></select> <br /><br />
+                <label>Manufacturer's ID: </label> <input type="text" name="manufactureid" id="editmanufactureid" placeholder="Manufacturer's ID" required=required /><br /> <br />
+                <label> Description:</label> <textarea name="description" id="editdescription" placeholder="Product Description" required=required> </textarea> <br /> <br />
+                <label> Product Features:</label> <textarea name="productfeatures" id="editproductfeatures" placeholder="Product Features" required=required> </textarea> <br /> <br />
+                <label> Cost:</label> <input type="text" name="cost" id="editcost" placeholder="Cost (ex: 250)" required=required /><br /> <br />
+                <label> Retail:</label> <input type="text" name="retail" id="editretail" placeholder="Retail (ex: $399.99)" required=required /><br /> <br />
+                <label>Product Image:</label> <img id="editImage" src="" /> <br /><br />
+                <label>New Product Image:</label> <input type="file" id="editproductimage" name="productimage" accept="image/*" /> <br /><br />
+                <input type="button" id="editclearbutton" value="Reset" />
+                <input type="submit" id="editsubmitbutton" value="Update" />
+                <input type="text" name="originalsku" id="originalsku" hidden=hidden />
+            </form>
+
+        </div>
+
+        <div id="tabs-3">
+
+            <div id="deleteSearchSpan">
+                <input type="search" name="deletesearch" id="deletesearch" placeholder="Search by SKU" autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus autofocus=autofocus required=required /> <input type="button" name="searchButton" id="deleteSearchButton" value="Search" />
+                <p id="noDeleteSearchResults">No Search Results</p>
+            </div>
+            <table name="deleteSearchResults" id="deleteSearchResults">
+                <tbody name="deleteSearchResultsBody" id="deleteSearchResultsBody"></tbody>
+            </table>
+
+
+        </div>
+    </div>
+</body>
+</html>
